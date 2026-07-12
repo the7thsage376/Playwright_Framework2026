@@ -8,6 +8,17 @@ export class LoginPage extends BasePage {
         await this.BasePageGoToUrl('/');
     }
 
+    async clickLoginButton() {
+        await this.BasePageClickElements(this.page.locator('xpath = //button//span[text() = "Login"]'));
+    }
+
+    async EnterLoginCredentials(username: string, password: string){
+
+        await this.BasePageTypeText(this.page.locator('#login-email'), username);
+        await this.BasePageTypeText(this.page.locator('#login-password'), password);
+        await this.BasePageClickElements(this.page.locator('#login-submit'));
+    }
+
 
 
 
