@@ -4,7 +4,7 @@ import { Page, Locator } from '@playwright/test';
 
 export class LoginPage extends BasePage {
 
-    async openWebsite(){
+    async GoToWebsite(){
         await this.BasePageGoToUrl('/');
     }
 
@@ -13,7 +13,6 @@ export class LoginPage extends BasePage {
     }
 
     async EnterLoginCredentials(username: string, password: string){
-
         await this.BasePageTypeText(this.page.locator('#login-email'), username);
         await this.BasePageTypeText(this.page.locator('#login-password'), password);
         await this.BasePageClickElements(this.page.locator('#login-submit'));
